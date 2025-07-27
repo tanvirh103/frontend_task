@@ -1,7 +1,9 @@
+
+
 export default function Welcome({ data }: { data: any }) {
   return (
-    <div className="bg-gradient-to-t to-[#030117] via-[#06011f] from-[#07022a]">
-      <div className="container mx-auto px-40 py-20">
+    <div className="bg-gradient-to-t to-[#030117] via-[#06011f] from-[#07022a] relative">
+      <div className="container mx-auto px-44 py-24">
         <h2 className="text-white text-xl md:text-4xl font-semibold">
           {data.data.title}
         </h2>
@@ -14,11 +16,12 @@ export default function Welcome({ data }: { data: any }) {
             (82.6% শিক্ষার্থী কোর্স শেষে ৫ রেটিং দিয়েছেন)
           </span>
         </p>
-        <p
-          className="text-des-text text-sm md:text-base font-normal mt-2"
+        <div
+          className="text-des-text text-sm md:text-base font-normal mt-2 pr-56"
           dangerouslySetInnerHTML={{ __html: data.data.description }}
-        ></p>
+        ></div>
       </div>
+      {/* <div className="absolute block bg-white top-1/6 translate-x-6/2 w-[400px] h-[500px] border-border-color border">gggfgf</div> */}
     </div>
   );
 }
