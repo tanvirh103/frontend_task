@@ -1,6 +1,7 @@
 import Banner from "@/component/banner";
 import CourseInstructor from "@/component/courseDetails";
 import Navbar from "@/component/navbar";
+import Accordion from "@/component/toggle";
 import Welcome from "@/component/welcome";
 import { getDetails } from "@/resources/Api";
 
@@ -13,7 +14,6 @@ export default async function Home() {
 
   return (
     <>
-      <Navbar />
       <Banner />
       <Welcome data={data} />
       <CourseInstructor  data={data}/>
