@@ -3,6 +3,8 @@ import CourseInstructor from "@/component/courseDetails";
 import Welcome from "@/component/welcome";
 import { getDetails } from "@/resources/Api";
 
+// This page uses searchParams so it needs to be dynamic
+export const dynamic = 'force-dynamic';
 
 export default async function Home({ searchParams }: { searchParams: Promise<{ lang?: string }> }) {
   const resolvedSearchParams = await searchParams;
