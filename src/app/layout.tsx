@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/component/navbar";
+import { Suspense } from "react";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -23,7 +24,9 @@ export default function RootLayout({
       <body
         className={`${inter.className} antialiased`}
       >
-        <Navbar/>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Navbar/>
+        </Suspense>
         {children}
       </body>
     </html>
