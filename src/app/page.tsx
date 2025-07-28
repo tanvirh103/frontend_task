@@ -4,8 +4,9 @@ import Welcome from "@/component/welcome";
 import { getDetails } from "@/resources/Api";
 
 
-export default async function Home({ searchParams }: { searchParams: { lang?: string } }) {
-  const lang =await searchParams.lang || 'en';
+export default async function Home({ searchParams }: { searchParams: Promise<{ lang?: string }> }) {
+  const resolvedSearchParams = await searchParams;
+  const lang = resolvedSearchParams.lang || 'en';
   const data = await getDetails(lang).catch((error) => {
     return console.log(error);
   });
