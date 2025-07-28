@@ -16,8 +16,6 @@ export function request({
   params?: any;
 }) {
    const inputUrl = new URL( url);
-    const sparams = new URLSearchParams(params).toString();
-    const fullUrl = sparams?.length ? inputUrl + "?" + sparams : inputUrl;
   const headers = {
     "Content-Type":
       dataType === "FormData"
@@ -35,7 +33,7 @@ export function request({
   };
   return new Promise(async (resolve, reject) => {
     try {
-      const result = await fetch(fullUrl.toString(), fetchOptions);
+      const result = await fetch(inputUrl.toString(), fetchOptions);
 
       if (result.ok) {
         const responseData = await result.json();
